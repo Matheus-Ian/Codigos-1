@@ -1,0 +1,12 @@
+algoritmo "se numero é divisivel por 5"
+var
+N1:inteiro
+inicio
+escreva ("Escreva um Numero ")
+leia(n1)
+se (n1 mod 5 = 0)entao
+escreva ("Este numero é divisivel por 5 ")
+senao
+escreva("Nao é divisel por 5 ")
+fimse
+fimalgoritmo

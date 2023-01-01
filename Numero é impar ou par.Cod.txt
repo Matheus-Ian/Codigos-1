@@ -1,0 +1,12 @@
+algoritmo "se numero é impar ou senao par"
+var
+N1:REAL
+inicio
+escreva ("Escreva Um Numero Qualquer ")
+leia (n1)
+se n1 mod 2 = 0 entao
+escreva("O número ", n1, " é par!")
+senao
+escreva("O número ", n1, " é ímpar!")
+fimse
+fimalgoritmo

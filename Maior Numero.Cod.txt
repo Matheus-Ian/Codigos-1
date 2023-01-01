@@ -1,0 +1,18 @@
+algoritmo "Maior Numero"
+var
+N1 ,N2 ,N3:INTEIRO
+inicio
+escreva ("Escreva Tres Numeros Inteiros: ")
+LEIA (N1 ,N2 ,N3)
+se (n1 >= n2) e (n1 >= n3) entao
+escreva ("O Numero Maior é o:",n1)
+fimse
+se (n2 >= n1) e (n2 >= n3) entao
+escreva ("O Numero Maior é o:",n2)
+fimse
+se (n3 >= n1) e (n3 >= n2) entao
+escreva ("O Numero Maior é:",n3)
+fimse
+
+
+fimalgoritmo
