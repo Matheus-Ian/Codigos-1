@@ -1,38 +1,25 @@
-<<<<<<< HEAD
-import sqlite3
+from banco import criar_banco, inserir_objeto
 
-# Conectar ao banco
-conexao = sqlite3.connect("banco.db")
-cursor = conexao.cursor()
+criar_banco()
 
-# Criar tabela
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS objetos (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT NOT NULL,
-    tamanho TEXT NOT NULL,
-    peso REAL NOT NULL,
-    quantidade INTEGER NOT NULL
-)
-""")
+print("=== Cadastro de Objetos ===")
 
-# Receber dados
 nome = input("Nome do objeto: ")
 tamanho = input("Tamanho: ")
-peso = float(input("Peso: "))
+cor = input("Cor: ")
+
+peso =float(input("Peso: "))
+unidade_peso = input("Unidade (kg/g): ")
+
 quantidade = int(input("Quantidade: "))
 
-# Inserir no banco
-cursor.execute("""
-INSERT INTO objetos (nome, tamanho, peso, quantidade)
-VALUES (?, ?, ?, ?)
-""", (nome, tamanho, peso, quantidade))
+inserir_objeto(
+    nome,
+    tamanho,
+    cor,
+    peso,
+    unidade_peso,
+    quantidade
+)
 
-conexao.commit()
-
-print("Objeto cadastrado com sucesso!")
-
-conexao.close()
-=======
-print ("Ola Mundo")
->>>>>>> ba2b56f66c339fa9c666579d19a29ffc980f2e03
+print("\nObjeto cadastrado com sucesso!")
