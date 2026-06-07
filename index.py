@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import sqlite3
 
 # Conectar ao banco
@@ -32,3 +33,6 @@ conexao.commit()
 print("Objeto cadastrado com sucesso!")
 
 conexao.close()
+=======
+print ("Ola Mundo")
+>>>>>>> ba2b56f66c339fa9c666579d19a29ffc980f2e03
