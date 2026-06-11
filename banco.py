@@ -1,7 +1,11 @@
 import sqlite3
 
-def criar_banco():
-    conexao = sqlite3.connect("database.db")
+def conectar():
+    return sqlite3.connect("database.db")
+
+
+def criar_tabela():
+    conexao = conectar()
     cursor = conexao.cursor()
 
     cursor.execute("""
@@ -19,8 +23,9 @@ def criar_banco():
     conexao.commit()
     conexao.close()
 
-def inserir_objeto(nome, tamanho, cor, peso, unidade_peso, quantidade):
-    conexao = sqlite3.connect("database.db")
+
+def cadastrar_objeto(nome, tamanho, cor, peso, unidade_peso, quantidade):
+    conexao = conectar()
     cursor = conexao.cursor()
 
     cursor.execute("""
@@ -28,6 +33,57 @@ def inserir_objeto(nome, tamanho, cor, peso, unidade_peso, quantidade):
     (nome, tamanho, cor, peso, unidade_peso, quantidade)
     VALUES (?, ?, ?, ?, ?, ?)
     """, (nome, tamanho, cor, peso, unidade_peso, quantidade))
+
+    conexao.commit()
+    conexao.close()
+
+
+def listar_objetos():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("SELECT * FROM objetos")
+    objetos = cursor.fetchall()
+
+    conexao.close()
+    return objetos
+
+
+def atualizar_objeto(id_objeto, nome, tamanho, cor, peso, unidade_peso, quantidade):
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("""
+    UPDATE objetos
+    SET nome = ?,
+        tamanho = ?,
+        cor = ?,
+        peso = ?,
+        unidade_peso = ?,
+        quantidade = ?
+    WHERE id = ?
+    """, (
+        nome,
+        tamanho,
+        cor,
+        peso,
+        unidade_peso,
+        quantidade,
+        id_objeto
+    ))
+
+    conexao.commit()
+    conexao.close()
+
+
+def excluir_objeto(id_objeto):
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute(
+        "DELETE FROM objetos WHERE id = ?",
+        (id_objeto,)
+    )
 
     conexao.commit()
     conexao.close()

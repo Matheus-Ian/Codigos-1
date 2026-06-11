@@ -1,21 +1,50 @@
-# Codigos-1
+# Sistema de Cadastro de Objetos
 
-Projeto em Python para cadastro de objetos utilizando SQLite.
+Projeto desenvolvido em Python utilizando SQLite para armazenamento de dados.
 
-## Dados cadastrados
-- Nome
-- Tamanho
-- Cor
-- Peso
-- Unidade de peso (kg ou g)
-- Quantidade
+## Funcionalidades
 
-## Tecnologias utilizadas
+- Cadastro de objetos
+- Listagem de objetos
+- Atualização de objetos
+- Exclusão de objetos
+- Armazenamento em banco de dados SQLite
+- Controle de nome, tamanho, cor, peso, unidade de medida (mg, g e kg) e quantidade
+
+## Operações CRUD
+
+| Operação | Descrição |
+|-----------|-----------|
+| Create | Cadastra novos objetos no banco de dados |
+| Read | Lista todos os objetos cadastrados |
+| Update | Atualiza as informações de um objeto |
+| Delete | Remove um objeto do banco de dados |
+
+## Tecnologias Utilizadas
+
 - Python
-- SQLite
+- SQLite3
+- Git
+- GitHub
+- Visual Studio Code
 
-## Como executar
+## Estrutura do Projeto
 
-1. Execute o arquivo index.py
-2. Preencha os dados solicitados
-3. Os dados serão armazenados no banco database.db
+```text
+Codigos-1/
+│
+├── banco.py
+├── index.py
+├── database.db
+└── README.md
+```
+
+## Como Executar
+
+```bash
+python index.py
+```
+
+## Autor
+
+Matheus Ian
